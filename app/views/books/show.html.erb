@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @book.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @book.description %>
+</p>
+
+<p>
+  <b>Star rating:</b>
+  <%= @book.star_rating %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @book.user_id %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @book.order_id %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @book.price %>
+</p>
+
+<p>
+  <b>Number of sales:</b>
+  <%= @book.number_of_sales %>
+</p>
+
+<p>
+  <b>Cover picture:</b>
+  <%= @book.cover_picture %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @book.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
