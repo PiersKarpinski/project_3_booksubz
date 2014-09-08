@@ -1,6 +1,8 @@
 BooksubzApp::Application.routes.draw do
   devise_for :users
 
+  resources :users, :only => [:show, :index, :destroy, :update]
+
   resources :books
 
 
@@ -12,7 +14,7 @@ BooksubzApp::Application.routes.draw do
 
   resources :orders
 
-  root to: "home#index"
+  root to: "books#index"
 
 
   # The priority is based upon order of creation:
