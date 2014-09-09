@@ -139,6 +139,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.1)
     rails (3.2.17)
       actionmailer (= 3.2.17)
       actionpack (= 3.2.17)
@@ -218,6 +219,7 @@ DEPENDENCIES
   prawn_rails
   pry-rails
   pry-stack_explorer
+  railroady
   rails (= 3.2.17)
   rails_12factor
   ransack
