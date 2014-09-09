@@ -38,7 +38,7 @@
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <%= search_form_for @q do |f| %>
-            <%= f.text_field :name_cont, placeholder: "book, author" %>
+            <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %>
             <%= f.submit %>
             <% end %>
           </div>

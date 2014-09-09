@@ -1,16 +1,13 @@
 BooksubzApp::Application.routes.draw do
+  resources :categories
+
   devise_for :users
 
   resources :users, :only => [:show, :index, :destroy, :update]
 
   resources :books
 
-
-  resources :genres
-
-
   resources :comments
-
 
   resources :orders
 
