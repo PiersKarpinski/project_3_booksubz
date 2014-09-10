@@ -2,45 +2,21 @@
 
 <div class= "row show-grid">
   <div class="row">
-    <div class="col-xs-6 col-sm-4 col-md-2">category1</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category2</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category3</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category4</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category5</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category6</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category7</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category8</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category9</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category10</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category11</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category12</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category13</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category14</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category15</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category16</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category17</div>
-    <div class="col-xs-6 col-sm-4 col-md-2">category18</div>
+    <% @categories.each do |category| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <img src="rad_cam.png" alt="...">
+        <div class="caption">
+          <h4><%= link_to category.name, category %></h4>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+
 
 <%= link_to 'New Category', new_category_path %>
