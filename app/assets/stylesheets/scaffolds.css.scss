@@ -68,6 +68,15 @@ div {
   }
 }
 
+html, body {
+  height: 100%;  
+}
+
+.page_wrap {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
 .navbar {
   margin-bottom: 0px;
 }
@@ -82,4 +91,21 @@ div {
 
 .form-control {
   width: 250px;
+}
+
+.site_footer, .page-wrap:after {
+  margin-top: 50px;
+  border-top: 1px solid black;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+}
+
+.site_footer li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  padding: 10px 0px 10px 0px;
+  font-size: 12px;
 }
