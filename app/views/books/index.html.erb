@@ -5,9 +5,13 @@
         <div class="col-xs-6 col-sm-4 col-md-3">
           <%= link_to book do %>
           <div class="thumbnail">
-            <%= image_tag book.cover_picture, class: 'category_image' %>
+            <%= image_tag book.cover_picture, class: 'book_image' %>
             <div class="caption">
-              <h4 class="category_thumbnail_caption"><%= book.name %></h4>
+              <div class="category_thumbnail_caption">
+                <h4><%= book.name %></h4>
+                <h4>£<%= book.price %></h4>
+                <h4><%= book.star_rating %></h4>
+              </div>
             </div>
           </div>
           <% end %>
