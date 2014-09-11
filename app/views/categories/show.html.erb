@@ -1,11 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
-
+<h3> Popular books in <%= @category.name %></h3>
+ 
+<h3> All books in <%= @category.name %></h3>
+<p>Sort by:</p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %> | 
+<%= link_to 'Back to all Categories', categories_path %> | 
 <%= link_to 'Destroy', category_path, method: :delete, data: { confirm: 'Are you sure?' } %>
