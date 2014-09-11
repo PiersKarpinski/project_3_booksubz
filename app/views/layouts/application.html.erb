@@ -33,9 +33,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-              <%= search_form_for @q do |f| %>
-              <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %>
-              <%= f.submit %>
+              <li class="search_input"><%= search_form_for @q do |f| %>
+              <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %></li>
+              <button type="button" class="btn btn-primary">Search<% f.submit %></button>
               <% end %>
             </div>
           </form>

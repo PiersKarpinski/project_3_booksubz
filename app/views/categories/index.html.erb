@@ -1,22 +1,24 @@
-<h1>All categories</h1>
-
-<div class= "row show-grid">
-  <div class="row">
-    <% @categories.each do |category| %>
-    <div class="col-xs-6 col-sm-4 col-md-3">
-      <div class="thumbnail">
-        <img src="rad_cam.png" alt="...">
-        <div class="caption">
-          <h4><%= link_to category.name, category %></h4>
+<section class="category_index_page">
+  <div class= "row show-grid">
+    <div class="row">
+        <% @categories.each do |category| %>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <%= link_to category do %>
+          <div class="thumbnail">
+            <%= image_tag category.image, class: 'category_image' %>
+            <div class="caption">
+              <h4 class="category_thumbnail_caption"><%= category.name %></h4>
+            </div>
+          </div>
+          <% end %>
         </div>
-      </div>
+        <% end %>
     </div>
-    <% end %>
   </div>
-</div>
-
+</section>
 
 
 
 
 <%= link_to 'New Category', new_category_path %>
+
