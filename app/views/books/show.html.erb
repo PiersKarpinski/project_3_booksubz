@@ -1,50 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-4">
+    <%= image_tag @book.cover_picture, class: 'user_show_image' %>
+  </div>
+  <div class="col-sm-8">
+    <h3>Description</h3>
+    <p class="user_show_about"><%= @book.description %></p>
+  </div>
+  <div class="col-sm-8">
+    <h3>Price</h3>
+    <p class="user_show_about">£<%= @book.price %></p>
+  </div>
+  <div class="col-sm-8">
+    <h3>Rating</h3>
+    <p class="user_show_about"><%= @book.star_rating %></p>
+  </div>
+  <div class="col-sm-8">
+    <h3>Sales</h3>
+    <p class="user_show_about"><%= @book.number_of_sales %></p>
+    <div class="col-sm-8">      
+  </div>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @book.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @book.description %>
-</p>
-
-<p>
-  <b>Star rating:</b>
-  <%= @book.star_rating %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @book.user_id %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%= @book.order_id %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @book.price %>
-</p>
-
-<p>
-  <b>Number of sales:</b>
-  <%= @book.number_of_sales %>
-</p>
-
-<p>
-  <b>Cover picture:</b>
-  <%= @book.cover_picture %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @book.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<button type="button" class="btn btn-success">Add to Basket</button>

@@ -1,39 +1,20 @@
-<h1>Listing books</h1>
+<section class="book_index_page">
+  <div class= "row show-grid">
+    <div class="row">
+        <% @books.each do |book| %>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <%= link_to book do %>
+          <div class="thumbnail">
+            <%= image_tag book.cover_picture, class: 'category_image' %>
+            <div class="caption">
+              <h4 class="category_thumbnail_caption"><%= book.name %></h4>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</section>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Star rating</th>
-    <th>User</th>
-    <th>Order</th>
-    <th>Price</th>
-    <th>Number of sales</th>
-    <th>Cover picture</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @books.each do |book| %>
-  <tr>
-    <td><%= book.name %></td>
-    <td><%= book.description %></td>
-    <td><%= book.star_rating %></td>
-    <td><%= book.user_id %></td>
-    <td><%= book.order_id %></td>
-    <td><%= book.price %></td>
-    <td><%= book.number_of_sales %></td>
-    <td><%= book.cover_picture %></td>
-    <td><%= book.content %></td>
-    <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Book', new_book_path %>

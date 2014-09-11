@@ -22,7 +22,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Project specific
       t.string :name
       t.string :email
-      t.text :profile_picture
+      t.text :image
+      t.text :about
       t.date :dob
 
       ## Confirmable
