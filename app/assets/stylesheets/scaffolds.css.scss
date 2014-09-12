@@ -196,4 +196,18 @@ h1 {
   margin-left: 40px;
 }
 
+.search_submit{
+  display: inline;
+}
+
+.search_submit input {
+  padding: 6px 7px 5px 7px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+  margin-top: 7px;
+}
+
 

@@ -31,14 +31,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <li class="search_input"><%= search_form_for @q do |f| %>
+              <li class="search_input"><%= search_form_for @q, :html => {:class => "navbar-form navbar-left"} do |f| %>
               <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %></li>
-              <button type="button" class="btn btn-primary">Search<% f.submit %>
-              <% end %></button>
-            </div>
-          </form>
+              <li class="search_submit"><%= f.submit %>
+              <% end %></li>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#">Account</a></li>
             <li class="active"><a href="#">

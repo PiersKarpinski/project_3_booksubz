@@ -3,22 +3,32 @@
     <%= image_tag @book.cover_picture, class: 'user_show_image' %>
   </div>
   <div class="col-sm-8">
-    <h3>Description</h3>
-    <p class="user_show_about"><%= @book.description %></p>
+    <h3>Title</h3>
+    <p class="user_show_about"><%= @book.name %></p>
+  </div>
+  <div class="col-sm-8">
+    <h3>Author</h3>
+    <p class="user_show_about"><%= @book.user.name %></p>
   </div>
   <div class="col-sm-8">
     <h3>Price</h3>
     <p class="user_show_about">£<%= @book.price %></p>
   </div>
+  <button type="button" class="btn btn-success">Add to Basket</button>
   <div class="col-sm-8">
     <h3>Rating</h3>
     <p class="user_show_about"><%= @book.star_rating %></p>
   </div>
   <div class="col-sm-8">
+    <h3>Description</h3>
+    <p class="user_show_about"><%= @book.description %></p>
+  </div>
+  <div class="col-sm-8">
     <h3>Sales</h3>
     <p class="user_show_about"><%= @book.number_of_sales %></p>
-    <div class="col-sm-8">      
+    <div class="col-sm-8">  
   </div>
+  <div class="col-sm-8">
+    <h3>Comments</h3>
+    <div class="col-sm-8"> 
 </div>
-
-<button type="button" class="btn btn-success">Add to Basket</button>

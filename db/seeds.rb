@@ -65,3 +65,28 @@ c18 = Category.create(name: 'Science Fiction & Fantasy', image: 'science_fiction
 c19 = Category.create(name: 'Sports & Games', image: 'sports_and_games.png')
 c20 = Category.create(name: 'Travel & Holiday', image: 'travel_and_holiday.jpg')
 
+u3.books << b7
+u3.books << b8
+u3.books << b9
+u3.books << b10
+u4.books << b2
+u4.books << b3
+u4.books << b4
+u5.books << b5
+u5.books << b6
+u9.books << b1
+
+c5.books << b7
+c5.books << b8
+c5.books << b9
+c5.books << b10
+c13.books << b2
+c13.books << b3
+c13.books << b4
+c16.books << b5
+c16.books << b6
+c18.books << b1
+c18.books << b5
+c18.books << b6
+
+
