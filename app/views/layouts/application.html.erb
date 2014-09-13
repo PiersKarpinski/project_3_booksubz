@@ -26,28 +26,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">booksubz</a>
+          <a class="navbar-brand" href="/">booksubz</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <%= search_form_for @q do |f| %>
-              <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %>
-              <%= f.submit %>
-              <% end %>
-            </div>
-          </form>
+              <li class="search_input"><%= search_form_for @q, :html => {:class => "navbar-form navbar-left"} do |f| %>
+              <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %></li>
+              <li class="search_submit"><%= f.submit %>
+              <% end %></li>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Account</a></li>
+            <li class="active"><%= link_to "Account", current_user %></li>
             <li class="active"><a href="#">
               <span class="glyphicon glyphicon-shopping-cart"></span>
             </a></li>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li class="active"><%= current_user.email %></li>
-              <li class="active"><%= link_to "Edit profile", edit_user_registration_path %></li>
+<!--               <li class="active"><%= current_user.email %></li>
+ -->              <li class="active"><%= link_to "Edit profile", edit_user_registration_path %></li>
               <li class="active"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
@@ -77,31 +73,18 @@
           <li class="dropdown nav_2">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">All</a></li>
+              <li><%= link_to "All", categories_path %></li>
               <li class="divider"></li>
-              <li><a href="#">Biography & Memoir</a></li>
-              <li><a href="#">Business & Economics</a></li>
-              <li><a href="#">Children's Fiction</a></li>
-              <li><a href="#">Children's Non-Fiction</a></li>
-              <li><a href="#">Computers & Internet</a></li>
-              <li><a href="#">Family & Relationships</a></li>
-              <li><a href="#">Health & Wellbeing</a></li>
-              <li><a href="#">History</a></li>
-              <li><a href="#">Home & Garden</a></li>
-              <li><a href="#">Humour</a></li>
-              <li><a href="#">Music, Stage & Screen</a></li>
-              <li><a href="#">Politics & Current Events</a></li>
-              <li><a href="#">Reference & Language</a></li>
-              <li><a href="#">Religion & Spirituality</a></li>
-              <li><a href="#">Science & Nature</a></li>
-              <li><a href="#">Science Fiction & Fantasy</a></li>
-              <li><a href="#">Sports & Games</a></li>
-              <li><a href="#">Travel & Holiday</a></li>
+              <li>
+                <% @categories.each do |category| %>
+                  <%= link_to category.name, category %>
+                <% end %>
+              </li>
             </ul>
           </li>
-          <li class="active nav_2"><a href="#">Bestsellers</a></li>
-          <li class="active nav_2"><a href="#">Free e books</a></li>
-          <li class="active nav_2"><a href="#">Authors</a></li>
+          <li class="active nav_2"><%= link_to "Bestsellers", books_path %>
+          <li class="active nav_2"><%= link_to "Free e books", books_path %>
+          <li class="active nav_2"><%= link_to "Authors", users_path %></li>
         </ul>
 
 
@@ -125,7 +108,7 @@
     <li>|</li>
     <li>terms & conditions</li>
     <li>|</li>
-    <li>copyright Piers Karpinski 2014</li>
+    <li>© Piers Karpinski 2014</li>
     <li>|</li>
   </footer>
 

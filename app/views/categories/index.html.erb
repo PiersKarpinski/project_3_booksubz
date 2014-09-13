@@ -1,23 +1,19 @@
-<h1>Listing categories</h1>
+<section class="category_index_page">
+  <div class= "row show-grid">
+    <div class="row">
+        <% @categories.each do |category| %>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <%= link_to category do %>
+          <div class="thumbnail">
+            <%= image_tag category.image, class: 'category_image' %>
+            <div class="caption">
+              <h4 class="category_thumbnail_caption"><%= category.name %></h4>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</section>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Category', new_category_path %>

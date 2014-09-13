@@ -74,7 +74,7 @@ html, body {
 
 .page_wrap {
   min-height: 100%;
-  margin-bottom: -40px;
+  margin-bottom: -60px;
 }
 
 .navbar {
@@ -94,11 +94,12 @@ html, body {
 }
 
 .site_footer, .page-wrap:after {
-  margin-top: 50px;
-  border-top: 1px solid black;
+  margin-top: 80px;
   width: 100%;
   text-align: center;
-  height: 40px;
+  height: 60px;
+  background-color: #333333;
+  color: white;
 }
 
 .site_footer li {
@@ -106,11 +107,11 @@ html, body {
   font-weight: 400;
   font-size: 15px;
   display: inline-block;
-  padding: 10px 0px 10px 0px;
+  padding: 20px 0px 10px 0px;
   font-size: 12px;
 }
 
-.show-grid{
+/*.show-grid{
 margin-top: 10px;
 margin-bottom: 10px;
 background-color: #eee;
@@ -121,7 +122,7 @@ border: 1px solid rgba(86,61,124,.2);
 
 .show-grid div {
 border: 1px solid rgba(86,61,124,.2);
-}
+}*/
 
 .row {
   margin: 5px 20px 5px 20px;
@@ -208,4 +209,5 @@ h1 {
   border-color: #285e8e;
   margin-top: 7px;
 }
+
 
