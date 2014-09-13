@@ -11,7 +11,7 @@ BooksubzApp::Application.routes.draw do
 
   resources :orders
 
-  root to: "books#index"
+  root to: "index#index"
 
 
   # The priority is based upon order of creation:
