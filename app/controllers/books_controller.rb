@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     # PK: Check out the application controller for the method for this.
-    # @user = User.all
+    @user = User.all
     # @books = Book.order(:name).page(params[:page])
 
     respond_to do |format|

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.hidden_field :user_id %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -20,32 +24,23 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :star_rating %><br />
-    <%= f.text_field :star_rating %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :order_id %><br />
-    <%= f.number_field :order_id %>
+    <% Category.all.each do |category| %>
+    <%= check_box_tag "book[category_ids][]", category.id, @book.categories.include?(category), id: "book_category_ids_#{category.id}" %>
+    <%= f.label :category_ids, category.name, for: "book_category_ids_#{category.id}" %>
+    <br>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :number_of_sales %><br />
-    <%= f.number_field :number_of_sales %>
-  </div>
-  <div class="field">
     <%= f.label :cover_picture %><br />
-    <%= f.text_area :cover_picture %>
+    <%= f.file_field :cover_picture %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.file_field :content %>
   </div>
   <div class="actions">
     <%= f.submit %>

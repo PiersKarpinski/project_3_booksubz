@@ -11,5 +11,8 @@ class User < ActiveRecord::Base
   has_many :books
   has_many :orders
   has_many :comments
+
+  mount_uploader :image, UserImageUploader
+
   
 end

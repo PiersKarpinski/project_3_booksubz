@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <%= image_tag @user.image, class: 'user_show_image' %>
+    <%= image_tag @user.image.url, class: 'user_show_image' %>
   </div>
   <div class="col-sm-8">
     <p class="user_show_about"><%= @user.about %></p>

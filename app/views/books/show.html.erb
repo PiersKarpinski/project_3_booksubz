@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-4">
-    <%= image_tag @book.cover_picture, class: 'user_show_image' %>
+    <p><%= image_tag @book.cover_picture.url %></p>
   </div>
   <div class="col-sm-8">
     <h3>Title</h3>
@@ -8,7 +8,7 @@
   </div>
   <div class="col-sm-8">
     <h3>Author</h3>
-    <p class="user_show_about"><%= @book.user.name %></p>
+    <p class="user_show_about"><%= @book.user_id %></p>
   </div>
   <div class="col-sm-8">
     <h3>Price</h3>
@@ -30,5 +30,14 @@
   </div>
   <div class="col-sm-8">
     <h3>Comments</h3>
-    <div class="col-sm-8"> 
+  </div>
+  <div class="col-sm-8">
+    <h3>Link to the book</h3>
+    <a href="/uploads/book/cover_picture/12/frankenstein.pdf">Frankenstein</a>
+  </div>
+  <div class="col-sm-8"> 
+    <h3>Sample</h3>
+<!--     <object data="/uploads/book/cover_picture/12/frankenstein.pdf" type="application/pdf" width="700" height="500">
+    </object> -->
+  </div> 
 </div>

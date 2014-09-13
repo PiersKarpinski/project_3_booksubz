@@ -5,5 +5,8 @@ class Book < ActiveRecord::Base
   has_many :comments
   has_and_belongs_to_many :orders
   has_and_belongs_to_many :categories
+
+  mount_uploader :cover_picture, BookCoverPictureUploader
+  mount_uploader :content, BookContentUploader
   
 end

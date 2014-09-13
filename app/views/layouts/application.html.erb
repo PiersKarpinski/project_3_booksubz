@@ -36,14 +36,14 @@
               <li class="search_submit"><%= f.submit %>
               <% end %></li>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Account</a></li>
+            <li class="active"><%= link_to "Account", current_user %></li>
             <li class="active"><a href="#">
               <span class="glyphicon glyphicon-shopping-cart"></span>
             </a></li>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li class="active"><%= current_user.email %></li>
-              <li class="active"><%= link_to "Edit profile", edit_user_registration_path %></li>
+<!--               <li class="active"><%= current_user.email %></li>
+ -->              <li class="active"><%= link_to "Edit profile", edit_user_registration_path %></li>
               <li class="active"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
@@ -108,7 +108,7 @@
     <li>|</li>
     <li>terms & conditions</li>
     <li>|</li>
-    <li>copyright Piers Karpinski 2014</li>
+    <li>© Piers Karpinski 2014</li>
     <li>|</li>
   </footer>
 
