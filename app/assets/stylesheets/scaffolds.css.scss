@@ -216,26 +216,26 @@ h1 {
   box-sizing: border-box; 
 }
 
-section {
-  height: 500px;
-}
-
 #one {
   background: url("new_world.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  height: 800px;
+
 }
 
 #two {
   background: #FFFFFF;
   position: relative;
+  height: 800px;
+
 }
 
 section h1 {
   color: white;
-  bottom: 15%;
+  top: 15%;
   left: 35%;
   position: absolute;
 
