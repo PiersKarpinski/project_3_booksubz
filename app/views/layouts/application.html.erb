@@ -33,10 +33,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <li class="search_input"><%= search_form_for @q, :html => {:class => "navbar-form navbar-left"} do |f| %>
-              <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %></li>
-              <li class="search_submit"><%= f.submit %>
-              <% end %></li>
+          <li class="search_input"><%= search_form_for @q, :html => {:class => "navbar-form navbar-left"} do |f| %>
+          <%= f.text_field :name_or_user_name_cont, placeholder: "book, author" %></li>
+          <li class="search_submit"><%= f.submit %>
+          <% end %></li>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><%= link_to "Account", current_user %></li>
             <li class="active"><a href="#">
@@ -99,6 +99,30 @@
       <p class="alert"><%= alert %></p>
       
     </div> -->
+
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <p>blah blah blah blah</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   <%= yield %>
