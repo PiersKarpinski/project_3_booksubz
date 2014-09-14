@@ -1,3 +1,5 @@
+
+
 <div class="row">
   <div class="col-sm-4">
     <p><%= image_tag @book.cover_picture.url %></p>
@@ -15,6 +17,14 @@
     <p class="user_show_about">£<%= @book.price %></p>
   </div>
   <button type="button" class="btn btn-success">Add to Basket</button>
+  <div ng-controller="BasketController as basket"> 
+    <button ng-click="market.basket = market.basket + 1">Add to basket</button>
+    <button ng-click="market.basket = market.basket - 1">Remove from basket</button>
+    <div>Your basket has {{ market.basket }} items in it</div>  
+
+  </div>    
+    
+
   <div class="col-sm-8">
     <h3>Rating</h3>
     <p class="user_show_about"><%= @book.star_rating %></p>

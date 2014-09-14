@@ -221,27 +221,55 @@ section {
 }
 
 #one {
-  background: #333333;
+  background: url("new_world.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 #two {
   background: #FFFFFF;
+  position: relative;
 }
 
 section h1 {
-  text-align: center;
   color: white;
-  padding-top: 230px;
+  bottom: 15%;
+  left: 35%;
+  position: absolute;
 
 }
 
 section h2 {
-  text-align: center;
+  bottom: 45%;
+  left: 25%;
   color: #333333;
-  padding-top: 230px;
+  position: absolute;
+
 }
 
+.crown {
+  content: url("crown.jpg");
+  -webkit-transform: rotate(-35deg);
+  position: absolute;
+  display: inline;
+  bottom: 45%;
+  left: 10%;
+  height: 200px;
+  width: auto;
+}
 
+.sceptre {
+  content: url("sceptre.jpg");
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  display: inline;
+  bottom: 40%;
+  left: 75%;
+  height: 200px;
+  width: auto;
+}
 
 
 
