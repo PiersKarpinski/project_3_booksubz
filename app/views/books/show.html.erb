@@ -7,9 +7,13 @@
         <div class="caption">
           <div class="category_thumbnail_caption">
             <h5><%= @book.name %></h5>
-            <h5><%= @book.user_id %></h5>
+            <h5><%= @book.user.name %></h5>
             <h5>£<%= @book.price %></h5>
-            <h5><%= @book.star_rating %></h5>
+            <div ng-controller="RatingDemoCtrl">
+              <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+              <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -25,10 +29,21 @@
         <p class="user_show_about">Sales: <%= @book.number_of_sales %></p>
       </div>
       <div class="col-sm-8">
-        <p class="user_show_about">Link to the book: <a href="/uploads/book/cover_picture/12/frankenstein.pdf">Frankenstein</p></a>
+        <p class="user_show_about">Link to the book: <a href="/uploads/book/content/11/hamlet.pdf">Hamlet</p></a>
       </div>
       <div class="col-sm-8">
         <p class="user_show_about">Comments</p>
+        <%= link_to "Leave a comment", new_comment_path %></p>
+
+        <div class="comment_box">
+          <% @book.comments.each do |comment| %>
+
+            <%= comment.user.name %> |
+            <%= comment.created_at.to_formatted_s(:long) %></br>
+            <%= comment.content %></br>
+            <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td></br>
+          <% end %>
+        </div>
 
       </div>
 
@@ -36,42 +51,6 @@
     </div>
   </div>
 
-  <div ng-controller="RatingDemoCtrl">
-    <h4>Default</h4>
-    <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-    <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
-
-    <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
-
-    <button class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
-    <button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
-    <hr />
-  </div>
-
-  <div ng-controller="ModalDemoCtrl">
-      <script type="text/ng-template" id="myModalContent.html">
-          <div class="modal-header">
-              <h3 class="modal-title">Im a modal!</h3>
-          </div>
-          <div class="modal-body">
-              <ul>
-                  <li ng-repeat="item in items">
-                      <a ng-click="selected.item = item">{{ item }}</a>
-                  </li>
-              </ul>
-              Selected: <b>{{ selected.item }}</b>
-          </div>
-          <div class="modal-footer">
-              <button class="btn btn-primary" ng-click="ok()">OK</button>
-              <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-          </div>
-      </script>
-
-      <button class="btn btn-default" ng-click="open()">Open me!</button>
-      <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
-      <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
-      <div ng-show="selected">Selection from a modal: {{ selected }}</div>
-  </div>
 
 </section>
 

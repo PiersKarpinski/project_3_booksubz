@@ -15,6 +15,8 @@
 
   </div>
 
+  <%= link_to "Upload a book", new_book_path %></p>
+
 
 
 </section>
@@ -29,16 +31,17 @@
         <div class="caption">
           <div class="category_thumbnail_caption">
             <h5><%= book.name %></h5>
-            <h5><%= book.user_id %></h5>
+            <h5><%= book.user.name %></h5>
             <h5>£<%= book.price %></h5>
-            <h5><%= book.star_rating %></h5>
+            <div ng-controller="RatingDemoCtrl">
+              <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+              <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+            </div>
           </div>
         </div>
       </div>
       <% end %>
     </div>
     <% end %>
-
-<h1>Favourite Books</h1>
 
 
