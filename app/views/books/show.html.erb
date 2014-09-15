@@ -28,8 +28,9 @@
       <div class="col-sm-8">
         <p class="user_show_about">Sales: <%= @book.number_of_sales %></p>
       </div>
+
       <div class="col-sm-8">
-        <p class="user_show_about">Link to the book: <a href="/uploads/book/content/11/hamlet.pdf">Hamlet</p></a>
+        <p class="user_show_about">Link to the book: <a href=<%="#{@book.content}"%>><%= @book.name%></a></p>
       </div>
       <div class="col-sm-8">
         <p class="user_show_about">Comments</p>
@@ -53,8 +54,6 @@
 
 
 </section>
-
-
 
 
     
