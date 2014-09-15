@@ -16,6 +16,8 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find(params[:id])
+    @comment = Comment.all
+    # @user = User.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +29,8 @@ class BooksController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
+    @book.user_id = current_user.id
+
 
     respond_to do |format|
       format.html # new.html.erb
