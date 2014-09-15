@@ -149,7 +149,7 @@ border: 1px solid rgba(86,61,124,.2);
 }
 
 .book_image {
-  width: 70%;
+  width: 60%;
   height: auto;
   padding-top: 5px;
   border-radius: 5px;
@@ -164,9 +164,18 @@ border: 1px solid rgba(86,61,124,.2);
 
 .category_thumbnail_caption {
   position: absolute;
-  bottom: 0;
-  left: 5%;
+  bottom: 2%;
+  left: 7%;
+  border: 2px solid black;
+  width: 85%;
+  border-radius: 5px;
+  background-color: #FAFAEE;
+  min-height: 30px;
 /*  margin-left: -53px;*/
+}
+
+.category_thumbnail_caption h5 {
+  padding-left: 10px;
 }
 
 .search_input {
@@ -192,7 +201,7 @@ border: 1px solid rgba(86,61,124,.2);
 }
 
 .user_show_about {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   margin: 20px;
 }
@@ -294,7 +303,16 @@ section h2 {
   width: 250px;
 }
 
-
+.basket_button {
+  background-color: green;
+  padding: 6px 7px 5px 7px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  border-color: #285e8e;
+  margin-top: 7px;
+  margin-left: 30px;
+}
 
 
 

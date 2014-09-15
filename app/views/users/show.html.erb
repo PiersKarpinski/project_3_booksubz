@@ -1,14 +1,44 @@
+<section class="user_index_page">
+  <div class="row">
 
-<div class="row">
-  <div class="col-sm-4">
-    <%= image_tag @user.image.url, class: 'user_show_image' %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <%= image_tag @user.image, class: 'cateory_image' %>
+        <div class="caption">
+          <h5 class="category_thumbnail_caption"><%= @user.name %></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <p class="user_show_about">About:</br><%= @user.about %></p>
+    </div>
+
   </div>
-  <div class="col-sm-8">
-    <p class="user_show_about"><%= @user.about %></p>
-  </div>
-</div>
+
+
+
+</section>
 
 <h1>Bibliography</h1>
-
+<div class="row">
+    <% @user.books.each do |book| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <%= link_to book do %>
+      <div class="thumbnail">
+        <%= image_tag book.cover_picture, class: 'book_image' %>
+        <div class="caption">
+          <div class="category_thumbnail_caption">
+            <h5><%= book.name %></h5>
+            <h5><%= book.user_id %></h5>
+            <h5>£<%= book.price %></h5>
+            <h5><%= book.star_rating %></h5>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
 
 <h1>Favourite Books</h1>
+
+
