@@ -60,10 +60,11 @@ class CommentsController < ApplicationController
   # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
+    @book = Book.all
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to books_path, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,9 +78,10 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    @book = Book.all
 
     respond_to do |format|
-      format.html { redirect_to comments_url }
+      format.html { redirect_to books_path }
       format.json { head :no_content }
     end
   end
